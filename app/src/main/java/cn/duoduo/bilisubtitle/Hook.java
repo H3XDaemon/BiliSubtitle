@@ -66,13 +66,13 @@ public class Hook implements IXposedHookLoadPackage {
                     String subtitleFile = cachePath + content;
                     String subtitle = readFile(subtitleFile);
                     log("SubtitleJSON " + subtitle);
-                    String subtitleSimple = ZhConverterUtil.toSimple(subtitle);
+                    String subtitleSimple = ZhConverterUtil.toTraditional(subtitle);
                     log("ConvertedJSON " + subtitleSimple);
                     writeFile(subtitleFile, subtitleSimple);
-                    toast("字幕转换成功: " + subtitleFile);
+                    toast("字幕轉換成功: " + subtitleFile);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    toast("字幕转换失败: " + e.getMessage());
+                    toast("字幕轉換失敗: " + e.getMessage());
                 }
             }
         });
